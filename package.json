@@ -6,7 +6,9 @@
   "scripts": {
     "test": "eslint . && mocha && npm run testExpress4 && npm run testExpress5",
     "testExpress4": "export EXPRESS_VERSION=latest;mocha",
-    "testExpress5": "export EXPRESS_VERSION=5.0.0-alpha.2;mocha"
+    "testExpress5": "export EXPRESS_VERSION=5.0.0-alpha.2;mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "pre-commit": [
     "test"
@@ -43,7 +45,8 @@
     "lodash": "^4.17.2",
     "method-override": "^2.3.6",
     "methods": "^1.1.2",
-    "trailpack-webserver": "^2.0.0"
+    "trailpack-webserver": "^2.0.0",
+    "snyk": "^1.192.0"
   },
   "eslintConfig": {
     "extends": "trails"
@@ -67,5 +70,6 @@
   },
   "publishConfig": {
     "tag": "next"
-  }
+  },
+  "snyk": true
 }
